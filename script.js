@@ -1,12 +1,13 @@
 const fileUrl = "ip.txt";
-const apiUrl = "https://isgmconline.now.sh/api";
+const apiUrl = "/api";
 const ipSpan = document.getElementById("ip");
+const onlineSpan = document.getElementById("online");
 
 async function getStatus(ip) {
     console.log("Getting status");
     const response = await fetch(apiUrl, []).then(console.log("Got status")); // resolves with response headers
     let result = await response.text(); // read body as json
-    ipSpan.innerText = result;
+    onlineSpan.innerText = result;
 }
 
 async function getIp() {
@@ -14,6 +15,6 @@ async function getIp() {
   const response = await fetch(fileUrl, []).then(console.log("Got IP")); // resolves with response headers
   let result = await response.text(); // read body as json
   ipSpan.innerText = result;
-  getStatus();
+  getStatus(result);
 }
 getIp();
