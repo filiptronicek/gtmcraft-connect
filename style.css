@@ -12,3 +12,9 @@ body {
     text-align: center;
     margin-top: 20vh;
 }
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1e1e1e;
+        color: #fff;
+    }
+}
