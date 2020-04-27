@@ -7,14 +7,21 @@
 }
 
 body {
-    font-size: 7rem;
+    font-size: 10vmin;
     font-family: 'Minecraft Ten';
     text-align: center;
     margin-top: 20vh;
 }
+@media only screen and (max-width: 800px) {
+    .ip {
+        display: none;
+    }
+  }
 @media (prefers-color-scheme: dark) {
     body {
         background: #1e1e1e;
         color: #fff;
+        font-size: 15vmin;
+
     }
 }
