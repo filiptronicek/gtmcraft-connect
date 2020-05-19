@@ -1,27 +1,26 @@
 @font-face {
-    font-family: 'Minecraft Ten';
-    src: url('fonts/MinecraftTen.woff2') format('woff2'),
-        url('fonts/MinecraftTen.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Minecraft Ten";
+  src: url("fonts/MinecraftTen.woff2") format("woff2"),
+    url("fonts/MinecraftTen.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-    font-size: 6rem;
-    font-family: 'Minecraft Ten';
-    text-align: center;
-    margin-top: 20vh;
+  font-size: 6rem;
+  font-family: "Minecraft Ten";
+  text-align: center;
+  margin-top: 20vh;
 }
 @media only screen and (max-width: 800px) {
-    .ip {
-        display: none;
-        font-size: 8rem;
-    }
+  .ip {
+    display: none;
+    font-size: 8rem;
   }
+}
 @media (prefers-color-scheme: dark) {
-    body {
-        background: #1e1e1e;
-        color: #fff;
-
-    }
+  body {
+    background: #1e1e1e;
+    color: #fff;
+  }
 }

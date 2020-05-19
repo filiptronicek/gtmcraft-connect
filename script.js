@@ -4,10 +4,12 @@ const ipSpan = document.getElementById("ip");
 const onlineSpan = document.getElementById("online");
 
 async function getStatus(ip) {
-    console.log("Getting status");
-    const response = await fetch(apiUrl+"?a="+ip, []).then(console.log("Got status")); // resolves with response headers
-    let result = await response.text(); // read body as json
-    onlineSpan.innerText = result;
+  console.log("Getting status");
+  const response = await fetch(apiUrl + "?a=" + ip, []).then(
+    console.log("Got status")
+  ); // resolves with response headers
+  let result = await response.text(); // read body as json
+  onlineSpan.innerText = result;
 }
 
 async function getIp() {
