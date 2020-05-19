@@ -5,10 +5,15 @@ const onlineSpan = document.getElementById("online");
 
 async function getStatus(ip) {
   console.log("Getting status");
-  const response = await fetch(apiUrl + "?a=" + ip, []).then(
+  const port = ip.split(":")[1];
+  ip = ip.split(":")[0];
+  const response = await fetch(`${apiUrl}?a=${ip}&p=${port}`, []).then(
     console.log("Got status")
   ); // resolves with response headers
   let result = await response.text(); // read body as json
+  if(result !== "Yes") {
+    result = "No";
+  }
   onlineSpan.innerText = result;
 }
 
