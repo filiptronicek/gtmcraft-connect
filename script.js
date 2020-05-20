@@ -11,6 +11,7 @@ async function getStatus(ip) {
     console.log("Got status")
   ); // resolves with response headers
   let result = await response.text(); // read body as json
+  result = result.replace(/\s/g, '');
   if(result !== "yes") {
     result = "no";
   }
