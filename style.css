@@ -5,6 +5,9 @@
   font-weight: normal;
   font-style: normal;
 }
+.ip, .pls {
+  font-size: 4rem;
+}
 
 body {
   font-size: 6rem;
@@ -12,12 +15,14 @@ body {
   text-align: center;
   margin-top: 20vh;
 }
+
 @media only screen and (max-width: 800px) {
   .ip {
     display: none;
     font-size: 8rem;
   }
 }
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #1e1e1e;

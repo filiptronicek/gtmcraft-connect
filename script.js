@@ -1,28 +1,25 @@
 const fileUrl = "ip.txt";
-const apiUrl = "/api";
+const apiUrl = "https://api.mcsrvstat.us/2/gtmcraft.trnck.dev";
 const ipSpan = document.getElementById("ip");
 const onlineSpan = document.getElementById("online");
+const playerSpan = document.getElementById("players");
 
-async function getStatus(ip) {
-  console.log("Getting status");
-  const port = ip.split(":")[1];
-  ip = ip.split(":")[0];
-  const response = await fetch(`${apiUrl}?a=${ip}&p=${port}`, []).then(
-    console.log("Got status")
-  ); // resolves with response headers
-  let result = await response.text(); // read body as json
-  result = result.replace(/\s/g, '');
-  if(result !== "yes") {
-    result = "no";
-  }
-  onlineSpan.innerText = result;
-}
+function getStatus() {
+fetch(apiUrl).then(resp => resp.json()).then(resp => {
+    onlineSpan.innerText = resp.online ? "yes" : "no";
+    ipSpan.innerText = resp.hostname || resp.ip;
 
-async function getIp() {
-  console.log("Getting IP");
-  const response = await fetch(fileUrl, []).then(console.log("Got IP")); // resolves with response headers
-  let result = await response.text(); // read body as json
-  ipSpan.innerText = result;
-  getStatus(result);
+    if (resp.online) {
+        var uuids = [];
+        for (const id in resp.players.uuid) { // check if the property/key is defined in the object itself, not in parent
+            if (resp.players.uuid.hasOwnProperty(id)) {
+                uuids.push(resp.players.uuid[id]);
+            }
+        }
+        //const images = uuids.map(uuid => `<img src="https://crafatar.com/avatars/${uuid}?size=40">`);
+        players.innerHTML = resp.players.list;
+    }
+});
 }
-getIp();
+getStatus();
+setInterval(getStatus, 10000);
