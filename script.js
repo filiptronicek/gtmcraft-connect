@@ -1,4 +1,3 @@
-const fileUrl = "ip.txt";
 const apiUrl = "https://api.mcsrvstat.us/2/gtmcraft.trnck.dev";
 const ipSpan = document.getElementById("ip");
 const onlineSpan = document.getElementById("online");
