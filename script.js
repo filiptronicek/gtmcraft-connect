@@ -10,6 +10,7 @@ function getStatus() {
 
         if (resp.online) {
             var uuids = [];
+            document.querySelector('.pls').style.display = "inline";
             for (const id in resp.players.uuid) { // check if the property/key is defined in the object itself, not in parent
                 if (resp.players.uuid.hasOwnProperty(id)) {
                     uuids.push(resp.players.uuid[id]);
