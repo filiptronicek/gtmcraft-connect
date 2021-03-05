@@ -17,6 +17,11 @@ function getStatus() {
                     uuids.push(resp.players.uuid[id]);
                 }
             }
+
+            if (uuids.length === 0) {
+                document.querySelector('.pls').style.display = "none";
+            }
+
             // const images = uuids.map(uuid => `<img src="https://crafatar.com/avatars/${uuid}?size=40">`);
             players.innerHTML = resp.players.list.join(", ") || "no one playin' rn :(";
         } else {
