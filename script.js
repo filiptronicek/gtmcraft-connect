@@ -20,6 +20,8 @@ function getStatus() {
 
             if (uuids.length === 0) {
                 document.querySelector('.pls').style.display = "none";
+            } else {
+                document.title = `(${uuids.length} online) ${document.title}`;
             }
 
             // const images = uuids.map(uuid => `<img src="https://crafatar.com/avatars/${uuid}?size=40">`);
