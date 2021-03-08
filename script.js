@@ -3,6 +3,8 @@ const ipSpan = document.getElementById("ip");
 const onlineSpan = document.getElementById("online");
 const playerSpan = document.getElementById("players");
 
+const title = document.title;
+
 function getStatus() {
     fetch(apiUrl).then(resp => resp.json()).then(resp => {
         onlineSpan.innerText = resp.online ? "yes" : "no";
@@ -21,7 +23,7 @@ function getStatus() {
             if (uuids.length === 0) {
                 document.querySelector('.pls').style.display = "none";
             } else {
-                document.title = `(${uuids.length} online) ${document.title}`;
+                document.title = `(${uuids.length} online) ${title}`;
             }
 
             // const images = uuids.map(uuid => `<img src="https://crafatar.com/avatars/${uuid}?size=40">`);
