@@ -1,17 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Is the server online? Asked Vláďa once again</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <div class="ip">The current server IP: </div> <span id="ip">lmao loading</span>
-        <br>
-        Online: <span id="online">perhaps</span>
-        <br>
-        <span class="pls">Players:</span> <br> <span id="players"></span>
-    </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is the server online? Asked Vláďa once again</title>
+</head>
+
+<body>
+  <div class="ip">The current server IP: </div> <span id="ip">lmao loading</span>
+  <br>
+  Online: <span id="online">perhaps</span>
+
+  <div>
+    Version: <span id="version">loading</span>
+  </div>
+  <br>
+  <span class="pls" id="players-wrapper">Players:</span> <br> <span id="players"></span>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
