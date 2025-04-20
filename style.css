@@ -5,15 +5,17 @@
   font-weight: normal;
   font-style: normal;
 }
-.ip, .pls {
-  font-size: 4rem;
-}
 
 body {
   font-size: 6rem;
   font-family: "Minecraft Ten";
   text-align: center;
   margin-top: 20vh;
+}
+
+.ip,
+.pls {
+  font-size: 4rem;
 }
 
 @media only screen and (max-width: 800px) {
